@@ -33,9 +33,9 @@ driver = uc.Chrome(options=options, use_subprocess=True)
 clear_csv()
 domains = get_domains()
 domains_len = len(domains)
-
+i = 1
 for domain in domains:
-    i = 1
+    time.sleep(4)
     try:
         driver.get(f"https://search.google.com/u/0/search-console/index?resource_id=sc-domain%3A{domain}")
         ibndex_box_values = driver.find_elements(By.XPATH, "//div[@class='nnLLaf vtZz6e']")
