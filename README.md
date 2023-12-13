@@ -17,7 +17,7 @@ profile = r"C:\Users\USERNAME\AppData\Local\Google\Chrome\User Data\Profile 3"
 
 3. Додати список доменів у файл domains.txt. 
 
-3.1. Якщо ви хочете отримати стату по всім доменам які є в GCS то їх можна витягнути використовуючи [XPATH Helper](https://chromewebstore.google.com/detail/xpath-helper/hgimnogjllphhhkhlmebbmlgjoejdpjl)
+3.1. Якщо ви хочете отримати стату по всім доменам які є в GCS, то їх можна витягнути використовуючи [XPATH Helper](https://chromewebstore.google.com/detail/xpath-helper/hgimnogjllphhhkhlmebbmlgjoejdpjl)
 
 [Картинка](https://images.mony.com.ua/smuglyanka/170249003419_kiss_213kb.png)
 
