@@ -1,4 +1,5 @@
-# gsc_selenium_page_indexing_repport
+# gsc_selenium_page_indexing_repport 1.1
+
 Інструмент для масового імпорту даних зі звіту Page indexing Google Search Console. [Картинка](https://images.mony.com.ua/smuglyanka/170249053773_kiss_67kb.png)
 Скріпт використовує ваш існуючий профіль Chrome браузера.
 
@@ -25,10 +26,18 @@ profile = r"C:\Users\USERNAME\AppData\Local\Google\Chrome\User Data\Profile 3"
 
 
 
-### Джерела
+## Джерела
 1. Selenium documentation: https://selenium-python.readthedocs.io/installation.html
 2. undetected-chromedriver documentation: https://pypi.org/project/undetected-chromedriver/
 3. Logic: https://www.youtube.com/watch?v=6SDzRN1aHiI
 
 
 ![](https://usagif.com/wp-content/uploads/2021/4fh5wi/pepefrg-4.gif)
+
+
+## release notes
+2023-12-14
+1. Додав перевірку доменів які підключені по URL, раніше була помилка.
+2. Додав час очікування, щоб не блокувався сайт GSC через велику кількість запитів.
+3. Додав підрахунок відсотка непроіндексованих сторінок
+4. Дрібні правки.

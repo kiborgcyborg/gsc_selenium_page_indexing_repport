@@ -1,4 +1,5 @@
 import time
+import random
 
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.remote.webdriver import By
@@ -16,7 +17,7 @@ def write_to_csv(data):
 # clear csv file
 def clear_csv():
     with open('result.csv', 'w') as f:
-        f.write('domain_name;sum;not_indexed;indexed\n')
+        f.write('domain_name;sum;indexed;not_indexed;percentage\n')
 
 
 def get_domains():
@@ -35,16 +36,22 @@ domains = get_domains()
 domains_len = len(domains)
 i = 1
 for domain in domains:
-    time.sleep(4)
+    
     try:
-        driver.get(f"https://search.google.com/u/0/search-console/index?resource_id=sc-domain%3A{domain}")
+        if "http" in domain:
+            driver.get(f"https://search.google.com/u/0/search-console/index?resource_id={domain}")
+        else:
+            driver.get(f"https://search.google.com/u/0/search-console/index?resource_id=sc-domain%3A{domain}")
+
+        time.sleep(random.randint(3,7))
         ibndex_box_values = driver.find_elements(By.XPATH, "//div[@class='nnLLaf vtZz6e']")
         
         not_indexed = ibndex_box_values[0].text
         indexed = ibndex_box_values[1].text
         pages_sum = int(not_indexed)+int(indexed)
+        percentage = int(not_indexed) / pages_sum
 
-        data = f"{domain};{pages_sum};{not_indexed};{indexed}"
+        data = f"{domain};{pages_sum};{indexed};{not_indexed};{percentage}"
         write_to_csv(data)
         print("✅ — [",i,"/",domains_len,"] >> ", domain)
         i += 1
